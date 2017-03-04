@@ -1,0 +1,61 @@
+.title-bar {
+    background: red;
+}
+
+.red-background {
+    background-color: red;
+}
+
+.gray-background {
+    background-color: rgba(16, 16, 16, 0.75);
+}
+
+.white-text {
+    color: white
+}
+
+.off-canvas ul button:hover {
+    color: rgb(255, 100, 100);
+}
+
+#widemenu {
+    width: 100%;
+    position: fixed;
+}
+
+#widemenu ul a:hover {
+    color: black;
+}
+
+#widemenu ul a:focus {
+    color: black;
+}
+
+#widemenu a {
+    display: inline !important;
+}
+
+#in_month_out {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+.bottom_div {
+    width: 33%;
+    padding: 0;
+}
+.bottom_button {
+    width: 100%;
+    margin: 0 auto;
+    padding: .8em 0;
+    color: red;
+}
+
+.side_button {
+    width: 100%;
+    margin: 0 auto;
+    padding: .6em 0;
+    color: white;
+}

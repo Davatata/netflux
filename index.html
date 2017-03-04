@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflux</title>
+    <link rel="stylesheet" href="foundation-6/css/foundation.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="modernizr.js"></script>
+</head>
+
+<body class="gray-background">
+
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+            <!-- off-canvas title bar for 'small' screen -->
+            <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+                <div class="title-bar-left">
+                    <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+                </div>
+                <div class="text-center">
+                    <span class="title-bar-title">Netflux</span>
+                </div>
+            </div>
+
+            <!-- off-canvas left menu -->
+            <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+                <ul class="vertical dropdown menu gray-background" data-dropdown-menu>
+                    <li><button type="button" data-close="offCanvasLeft" class="white-text side_button">Home</button></li>
+                    <li><button type="button" data-close="offCanvasLeft" class="white-text side_button">About</button></li>
+                </ul>
+            </div>
+
+            <!-- "wider" top-bar menu for 'medium' and up -->
+            <div id="widemenu" class="top-bar  red-background">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li class="menu-text red-background white-text">Netflux</li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li class="menu-text red-background white-text">
+                            <a href="#" class="white-text">In</a>
+                        </li>
+                        <li class="menu-text red-background white-text">
+                            <a href="#" class="white-text">Out</a>
+                        </li>
+                        <li class="menu-text red-background white-text">
+                            <a href="#" class="white-text">Month</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- original content goes in this container -->
+            <div class="off-canvas-content" data-off-canvas-content>
+                <div class="row column">
+                    <img src="http://placehold.it/2000x3000" alt="" />
+                </div>
+                <div class="row column">
+                    <img src="http://placehold.it/2000x3000" alt="" />
+                </div>
+            </div>
+
+            <!-- close wrapper, no more content after this -->
+        </div>
+    </div>
+
+    <div id="in_month_out" class="show-for-small-only">
+        <div class="row">
+            <div id="in_button"    class="small-3 columns bottom_div"><button id="bottom_in"    type="button" class="bottom_button" onclick="flux_click(this)">In</button></div>
+            <div id="month_button" class="small-6 columns bottom_div"><button id="bottom_month" type="button" class="bottom_button" onclick="">Month</button></div>
+            <div id="out_button"   class="small-3 columns bottom_div"><button id="bottom_out"   type="button" class="bottom_button" onclick="flux_click(this)">Out</button></div>
+        </ul>
+    </div>
+
+    <script src="foundation-6/js/vendor/jquery.min.js"></script>
+    <script src="foundation-6/js/vendor/what-input.min.js"></script>
+    <script src="foundation-6/js/foundation.min.js"></script>
+    <script src="flux.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>
