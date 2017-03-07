@@ -8,4 +8,5 @@ function flux_click(id) {
     out_button.style.color = "red";
     $(id).css("background-color", "red");
     $(id).css("color", "white");
+    document.getElementById(id.id).blur();
 }
