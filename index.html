@@ -12,9 +12,10 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="foundation-6/js/vendor/jquery.min.js"></script>
     <script>
-        $( document ).ready(function() {
+        $(document).ready(function() {
             $('body').css("display", "block");
             console.log("ready");
+            setMonths();
         });
     </script>
     <script src="modernizr.js"></script>
@@ -56,10 +57,10 @@
                             <a id="topbar_in" href="#" class="white-text" onclick="flux_click(this)">In</a>
                         </li>
                         <li class="menu-text red-background white-text">
-                            <a  id="topbar_out" href="#" class="white-text" onclick="flux_click(this)">Out</a>
+                            <a id="topbar_out" href="#" class="white-text" onclick="flux_click(this)">Out</a>
                         </li>
                         <li class="menu-text red-background white-text">
-                            <a  id="topbar_month" href="#" class="white-text topbar-class">Month</a>
+                            <a id="topbar_month" href="#" class="white-text topbar-class month-item" data-open="month_modal">Month</a>
                         </li>
                     </ul>
                 </div>
@@ -81,19 +82,54 @@
 
     <div id="in_month_out" class="show-for-small-only">
         <div class="row">
-            <div id="in_button"    class="small-3 columns bottom_div"><button id="bottom_in"    type="button" class="bottom_button" onclick="flux_click(this)">In</button></div>
-            <div id="month_button" class="small-6 columns bottom_div"><button id="bottom_month" type="button" class="bottom_button" onclick="">Month</button></div>
-            <div id="out_button"   class="small-3 columns bottom_div"><button id="bottom_out"   type="button" class="bottom_button" onclick="flux_click(this)">Out</button></div>
-        </ul>
-    </div>
+            <div id="in_button" class="small-3 columns bottom_div"><button id="bottom_in" type="button" class="bottom_button" onclick="flux_click(this)">In</button></div>
+            <div id="month_button" class="small-6 columns bottom_div"><button id="bottom_month" type="button" class="bottom_button month-item" data-open="month_modal">Month</button></div>
+            <div id="out_button" class="small-3 columns bottom_div"><button id="bottom_out" type="button" class="bottom_button" onclick="flux_click(this)">Out</button></div>
+        </div>
 
+        <!-- reveal for user to select month -->
+        <div class="tiny reveal" id="month_modal" data-reveal>
+            <h4 class="text-center">Select Month:</h4>
+            <hr/>
+            <div id="month_wrapper">
+                <div class="row text-center">
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="1" onclick="pickMonth(this.getAttribute('month'))">Jan</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="2" onclick="pickMonth(this.getAttribute('month'))">Feb</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="3" onclick="pickMonth(this.getAttribute('month'))">Mar</button></div>
+                </div>
+                <div class="row text-center">
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="4" onclick="pickMonth(this.getAttribute('month'))">Apr</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="5" onclick="pickMonth(this.getAttribute('month'))">May</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="6" onclick="pickMonth(this.getAttribute('month'))">Jun</button></div>
+                </div>
+                <div class="row text-center">
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="7" onclick="pickMonth(this.getAttribute('month'))">Jul</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="8" onclick="pickMonth(this.getAttribute('month'))">Aug</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="9" onclick="pickMonth(this.getAttribute('month'))">Sep</button></div>
+                </div>
+                <div class="row text-center">
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="10" onclick="pickMonth(this.getAttribute('month'))">Oct</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="11" onclick="pickMonth(this.getAttribute('month'))">Nov</button></div>
+                    <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="12" onclick="pickMonth(this.getAttribute('month'))">Dec</button></div>
+                </div>
+                <hr/>
+                <div class="button-group float-right">
+                    <a class="button rounded secondary round-button" href="#" style="margin-right: 1em" onclick="changeMonth(0)">Cancel</a>
+                    <a class="button rounded success round-button" href="#" onclick="changeMonth(1)">Update</a>
+                </div>
+            </div>
 
-    <script src="foundation-6/js/vendor/what-input.min.js"></script>
-    <script src="foundation-6/js/foundation.min.js"></script>
-    <script src="flux.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <script src="foundation-6/js/vendor/what-input.min.js"></script>
+        <script src="foundation-6/js/foundation.min.js"></script>
+        <script src="flux.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
 </body>
 
 </html>

@@ -73,3 +73,27 @@
     background: white;
     color: red;
 }
+
+.button-month {
+    width: 100%;
+    padding: .8em;
+}
+.button-month:hover, .bottom_button:hover {
+    -webkit-transition:background-color 0.5s linear, color 0.2s linear;
+    background: red;
+    color: white;
+
+}
+.button-month:focus {
+    background-color: red;
+    color: white;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.round-button {
+    /*box-shadow: -3px 3px 5px grey;*/
+    border-radius: 6px;
+}
