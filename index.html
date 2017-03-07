@@ -10,10 +10,17 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="foundation-6/js/vendor/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('body').css("display", "block");
+            console.log("ready");
+        });
+    </script>
     <script src="modernizr.js"></script>
 </head>
 
-<body class="gray-background">
+<body class="gray-background" style="display:none;">
 
     <div class="off-canvas-wrapper">
         <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
@@ -80,7 +87,6 @@
         </ul>
     </div>
 
-    <script src="foundation-6/js/vendor/jquery.min.js"></script>
     <script src="foundation-6/js/vendor/what-input.min.js"></script>
     <script src="foundation-6/js/foundation.min.js"></script>
     <script src="flux.js"></script>
