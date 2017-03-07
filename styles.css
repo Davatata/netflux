@@ -31,8 +31,8 @@
     color: black;
 }
 
-#widemenu ul a:focus {
-    color: black;
+#widemenu ul a.topbar-class:focus {
+    color: white;
 }
 
 #widemenu a {
