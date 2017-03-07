@@ -53,13 +53,13 @@
                 <div class="top-bar-right">
                     <ul class="menu">
                         <li class="menu-text red-background white-text">
-                            <a href="#" class="white-text">In</a>
+                            <a id="topbar_in" href="#" class="white-text" onclick="flux_click(this)">In</a>
                         </li>
                         <li class="menu-text red-background white-text">
-                            <a href="#" class="white-text">Out</a>
+                            <a  id="topbar_out" href="#" class="white-text" onclick="flux_click(this)">Out</a>
                         </li>
                         <li class="menu-text red-background white-text">
-                            <a href="#" class="white-text">Month</a>
+                            <a  id="topbar_month" href="#" class="white-text">Month</a>
                         </li>
                     </ul>
                 </div>
@@ -86,6 +86,7 @@
             <div id="out_button"   class="small-3 columns bottom_div"><button id="bottom_out"   type="button" class="bottom_button" onclick="flux_click(this)">Out</button></div>
         </ul>
     </div>
+
 
     <script src="foundation-6/js/vendor/what-input.min.js"></script>
     <script src="foundation-6/js/foundation.min.js"></script>
