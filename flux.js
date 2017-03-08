@@ -43,8 +43,8 @@ function flux_click(id) {
     $("#bottom_" + selected).removeClass("white_button").addClass("red_button");
     $("#bottom_" + unselect).removeClass("red_button").addClass("white_button");
 
-    $("#topbar_" + selected).removeClass("white-text").addClass("black-text");
-    $("#topbar_" + unselect).removeClass("black-text").addClass("white-text");
+    $("#topbar_" + selected).removeClass("white-text").addClass("pink-text");
+    $("#topbar_" + unselect).removeClass("pink-text").addClass("white-text");
 
     document.getElementById(id.id).blur();
 }

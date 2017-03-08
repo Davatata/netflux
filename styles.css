@@ -18,9 +18,14 @@
     color: black;
 }
 
+.pink-text {
+    color: rgb(255, 100, 100);
+}
+
 .off-canvas ul button:hover {
     color: rgb(255, 100, 100);
 }
+
 
 #widemenu {
     width: 100%;
@@ -28,7 +33,7 @@
 }
 
 #widemenu ul a:hover {
-    color: black;
+    color: rgb(255, 100, 100);
 }
 
 #widemenu ul a.topbar-class:focus {
@@ -47,7 +52,6 @@
 }
 
 .bottom_div {
-    width: 33%;
     padding: 0;
 }
 .bottom_button {
