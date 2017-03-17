@@ -54,7 +54,7 @@ function flux_click(id) {
     var selected = id.id.split("_")[1];
     var unselect = selected === "in" ? "out" : "in";
     current_flux = selected;
-
+    
     $("#bottom_" + selected).removeClass("white_button").addClass("red_button");
     $("#bottom_" + unselect).removeClass("red_button").addClass("white_button");
 
