@@ -39,6 +39,7 @@ function changeMonth(n) {
         }
 
         var ele = createNode(file_string);
+        console.log(ele);
         var parent = document.getElementById("parent_node");
         var content = document.getElementById("flux_content");
         ele.id = "flux_content";
@@ -74,6 +75,9 @@ function createNode(file) {
     var node = document.createElement("div");
 
     var jqxhr = $.get(file, function(data) {
+
+    })
+    .done(function(data) {
         var days = data.split("\n\n");
         for (var i = 0; i < days.length; i++) {
             var items = days[i].trim().split("\n");
@@ -91,7 +95,12 @@ function createNode(file) {
             node.appendChild(list);
         }
         console.log(node);
+    })
+    .fail(function(data) {
+        var bad = document.createElement("h4");
+        bad.appendChild(document.createTextNode("Coming Soon."));
+        node.appendChild(bad);
     });
-    console.log(jqxhr);
+
     return node;
 }
