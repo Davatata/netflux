@@ -28,6 +28,7 @@ function changeMonth(n) {
         $(".month-item").text(months[possible_month]);
         chosen_month = possible_month;
         var file_month = months[chosen_month].toLowerCase().substring(0,3);
+        console.log(file_month);
 
         if (current_flux === "in") {
             var file_string = "incoming/in_"+file_month+"_2017.txt";
@@ -36,10 +37,11 @@ function changeMonth(n) {
         }
 
         var ele = createNode(file_string);
-        if (ele !== "failed") {
-            var content = document.getElementById("flux_content");
-            content.appendChild(ele);
-        }
+        var parent = document.getElementById("parent_node");
+        var content = document.getElementById("flux_content");
+        ele.id = "flux_content";
+        parent.replaceChild(ele, content);
+
     } else {
         possible_month = chosen_month;
     }
@@ -65,18 +67,19 @@ function flux_click(id) {
 
     document.getElementById(id.id).blur();
 }
+
 function createNode(file) {
     var node = document.createElement("div");
 
     var jqxhr = $.get(file, function(data) {
         var days = data.split("\n\n");
         for (var i = 0; i < days.length; i++) {
-            var items = days[i].split("\n");
-            var header = document.createElement("h3");
+            var items = days[i].trim().split("\n");
+            var header = document.createElement("h2");
             header.appendChild(document.createTextNode(items[0]));
 
             var list = document.createElement("ul");
-            list.setAttribute("style", "list-style-type: none");
+            // list.setAttribute("style", "list-style-type: none");
             for (var j = 1; j < items.length; j++) {
                 var list_item = document.createElement("li");
                 list_item.appendChild(document.createTextNode(items[j]));
@@ -85,10 +88,8 @@ function createNode(file) {
             node.appendChild(header);
             node.appendChild(list);
         }
+        console.log(node);
     });
-
-    if (jqxhr.statusText === "OK")
-        return node;
-    else
-        return "failed";
+    console.log(jqxhr);
+    return node;
 }
