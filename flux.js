@@ -14,7 +14,7 @@ var months = {
 
 var chosen_month;
 var possible_month;
-var current_flux;
+var current_flux = "in";
 
 // set current month
 function setMonths() {
