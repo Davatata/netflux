@@ -101,3 +101,9 @@
     /*box-shadow: -3px 3px 5px grey;*/
     border-radius: 6px;
 }
+
+@media only screen and (min-width: 640px) {
+    #flux_content {
+        margin-top: 54px;
+    }
+}
