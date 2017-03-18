@@ -21,7 +21,6 @@ function setMonths() {
     chosen_month = new Date().getMonth() + 1;
     possible_month = chosen_month;
     $(".month-item").text(months[chosen_month]);
-    $("#in_button").click();
     changeMonth(1);
 }
 
@@ -67,7 +66,7 @@ function flux_click(id) {
 
     $("#topbar_" + selected).removeClass("white-text").addClass("pink-text");
     $("#topbar_" + unselect).removeClass("pink-text").addClass("white-text");
-
+    changeMonth(1);
     document.getElementById(id.id).blur();
 }
 
