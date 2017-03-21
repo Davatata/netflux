@@ -80,8 +80,9 @@ function createNode(file) {
         var days = data.split("\n\n");
         for (var i = 0; i < days.length; i++) {
             var items = days[i].trim().split("\n");
-            var header = document.createElement("h2");
+            var header = document.createElement("h3");
             header.appendChild(document.createTextNode(items[0]));
+            header.setAttribute("class", "date-header");
 
             var list = document.createElement("ul");
             // list.setAttribute("style", "list-style-type: none");

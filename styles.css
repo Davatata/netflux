@@ -93,6 +93,14 @@
     color: white;
 }
 
+.button-disabled {
+    width: 100%;
+    padding: .8em;
+    cursor: not-allowed;
+    color: #eee;
+}
+
+
 .no-padding {
     padding: 0 !important;
 }
