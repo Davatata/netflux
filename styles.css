@@ -115,12 +115,12 @@
 
 
 @media only screen and (min-width: 640px) {
-    #flux_content {
+    #flux_content, #about_content {
         margin-top: 54px;
     }
 }
 
-#flux_content {
+#flux_content, #about_content {
     padding: 1em 0 4em 2em;
     min-height: 700px;
 }

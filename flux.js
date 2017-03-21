@@ -104,3 +104,13 @@ function createNode(file) {
 
     return node;
 }
+
+function showAbout() {
+    $("#flux_content").css("display", "none");
+    $("#about_content").css("display", "block");
+}
+
+function showFlux() {
+    $("#about_content").css("display", "none");
+    $("#flux_content").css("display", "block");
+}
