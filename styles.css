@@ -99,7 +99,10 @@
     cursor: not-allowed;
     color: #eee;
 }
-
+.button-disabled:focus {
+    background-color: whitesmoke;
+    color: white;
+}
 
 .no-padding {
     padding: 0 !important;
@@ -119,4 +122,9 @@
 
 #flux_content {
     padding: 1em 0 4em 2em;
+    min-height: 700px;
+}
+
+.off-canvas-wrapper {
+    background-color: lightgray;
 }
