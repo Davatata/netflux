@@ -32,9 +32,9 @@ function changeMonth(n) {
         console.log(file_month);
 
         if (current_flux === "in") {
-            var file_string = "https://github.com/Davatata/netflux/blob/master/" + "incoming/in_"+file_month+"_2017.txt";
+            var file_string = "incoming/in_"+file_month+"_2017.txt";
         } else {
-            var file_string = "https://github.com/Davatata/netflux/blob/master/" + "outgoing/out_"+file_month+"_2017.txt";
+            var file_string = "outgoing/out_"+file_month+"_2017.txt";
         }
 
         var ele = createNode(file_string);
