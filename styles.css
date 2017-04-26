@@ -52,6 +52,7 @@
     position: fixed;
     width: 100%;
     background-color: white;
+    border-top: solid gray 2px;
 }
 
 .bottom_div {
@@ -132,8 +133,4 @@
 
 .off-canvas-wrapper {
     background-color: lightgray;
-}
-
-.gray-top-border {
-  border-top: solid gray 2px;
 }
