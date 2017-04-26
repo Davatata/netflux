@@ -10,6 +10,10 @@
     background-color: rgba(16, 16, 16, 0.75);
 }
 
+.white-background {
+    background-color: white;
+}
+
 .white-text {
     color: white
 }
@@ -25,7 +29,6 @@
 .off-canvas ul button:hover {
     color: rgb(255, 100, 100);
 }
-
 
 #widemenu {
     width: 100%;
@@ -54,6 +57,7 @@
 .bottom_div {
     padding: 0;
 }
+
 .bottom_button {
     width: 100%;
     margin: 0 auto;
@@ -82,12 +86,13 @@
     width: 100%;
     padding: .8em;
 }
+
 .button-month:hover, .bottom_button:hover {
-    -webkit-transition:background-color 0.5s linear, color 0.2s linear;
+    -webkit-transition: background-color 0.5s linear, color 0.2s linear;
     background: red;
     color: white;
-
 }
+
 .button-month:focus {
     background-color: red;
     color: white;
@@ -99,6 +104,7 @@
     cursor: not-allowed;
     color: #eee;
 }
+
 .button-disabled:focus {
     background-color: whitesmoke;
     color: white;
@@ -112,7 +118,6 @@
     /*box-shadow: -3px 3px 5px grey;*/
     border-radius: 6px;
 }
-
 
 @media only screen and (min-width: 640px) {
     #flux_content, #about_content {
