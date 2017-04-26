@@ -42,6 +42,7 @@ function changeMonth(n) {
         var parent = document.getElementById("parent_node");
         var content = document.getElementById("flux_content");
         ele.id = "flux_content";
+        ele.className = "white-background";
         parent.replaceChild(ele, content);
 
     } else {
