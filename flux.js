@@ -71,6 +71,7 @@ function flux_click(id) {
 }
 
 function createNode(file) {
+    console.log(file);
     var node = document.createElement("div");
 
     var jqxhr = $.get(file, function(data) {
