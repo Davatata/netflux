@@ -2,4 +2,6 @@
 display upcoming and departing items in Netflix library
 
 
-<img src="netflux/netflux_pic.png">
+<p align="center">
+  <img src="netflux/netflux_pic.png" />
+</p>
