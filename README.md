@@ -1,5 +1,5 @@
 # netflux
-display upcoming and departing items in Netflix library
+Display the upcoming and outgoing items in the netflix library.
 
 
 <p align="left">
