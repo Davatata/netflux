@@ -76,12 +76,11 @@ function createNode(file) {
   console.log(file);
   var node = document.createElement("div");
 
-  var jqxhr = $.get(file, function (data) {
-
-  })
+  var jqxhr = $.get(file, function (data) {})
     .done(function (data) {
       var days = data.split("\n\n");
-      console.log(days);
+      console.log(`days: ${days}`);
+      console.log(`data: ${data}`);
       for (var i = 0; i < days.length; i++) {
         var items = days[i].trim().split("\n");
         var header = document.createElement("h3");
