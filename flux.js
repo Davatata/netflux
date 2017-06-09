@@ -81,6 +81,7 @@ function createNode(file) {
   })
     .done(function (data) {
       var days = data.split("\n\n");
+      console.log(days);
       for (var i = 0; i < days.length; i++) {
         var items = days[i].trim().split("\n");
         var header = document.createElement("h3");
