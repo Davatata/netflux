@@ -79,8 +79,8 @@ function createNode(file) {
   var jqxhr = $.get(file, function (data) {})
     .done(function (data) {
       var days = data.split("\n\n");
-      console.log(`days: ${days}`);
       console.log(`data: ${data}`);
+      console.log(`days: ${JSON.stringify(days)}`);
       for (var i = 0; i < days.length; i++) {
         var items = days[i].trim().split("\n");
         var header = document.createElement("h3");
