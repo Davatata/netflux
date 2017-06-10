@@ -79,10 +79,11 @@ function createNode(file) {
   var jqxhr = $.get(file, function (data) {})
     .done(function (data) {
       var days = data.split("\n\n");
-      console.log(`data: ${data}`);
+      
       console.log(`days: ${JSON.stringify(days)}`);
       for (var i = 0; i < days.length; i++) {
         var items = days[i].trim().split("\n");
+        console.log(`items: ${items}`);
         var header = document.createElement("h3");
         header.appendChild(document.createTextNode(items[0]));
         header.setAttribute("class", "date-header");
