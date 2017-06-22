@@ -1,3 +1,8 @@
+// Load in the in/out files and adjust lines accordingly.
+// Change ( class="button-disabled" month="0" ) to 
+//  ( class="button-month" month="8") : here 8 represents August
+//  so change according to month (1-12)
+
 var months = {
   "1": "January",
   "2": "February",
