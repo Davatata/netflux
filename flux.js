@@ -38,12 +38,12 @@ function changeMonth(n) {
     console.log(file_month);
 
     if (current_flux === "in") {
-      var file_string = 
-        "https://raw.githubusercontent.com/Davatata/netflux/master/" + 
+      var file_string =
+        "https://raw.githubusercontent.com/Davatata/netflux/master/" +
         "incoming/in_" + file_month + "_2017.txt";
     } else {
-      var file_string = 
-        "https://raw.githubusercontent.com/Davatata/netflux/master/" + 
+      var file_string =
+        "https://raw.githubusercontent.com/Davatata/netflux/master/" +
         "outgoing/out_" + file_month + "_2017.txt";
     }
 
@@ -85,28 +85,30 @@ function createNode(file) {
   console.log(file);
   var node = document.createElement("div");
 
-  var jqxhr = $.get(file, function (data) {})
+  var jqxhr = $.get(file, function (data) { })
     .done(function (data) {
-      var days = data.split("\n\n");
-      
-      console.log(`days: ${JSON.stringify(days)}`);
-      for (var i = 0; i < days.length; i++) {
-        var items = days[i].trim().split("\n");
-        console.log(`items: ${items}`);
-        var header = document.createElement("h3");
-        header.appendChild(document.createTextNode(items[0]));
-        header.setAttribute("class", "date-header");
+      var days = data.split(/\n/);
+      // console.log(days);
 
+      let test_array = [];
+      for (let i = 0; i < days.length; i++) {
+        test_array.push(days[i]);
+        var header = document.createElement("h3");
+        header.appendChild(document.createTextNode(days[i]));
+        header.setAttribute("class", "date-header");
         var list = document.createElement("ul");
-        // list.setAttribute("style", "list-style-type: none");
-        for (var j = 1; j < items.length; j++) {
+        i++;
+        while ((days[i].length > 2) && i < days.length) {
           var list_item = document.createElement("li");
-          list_item.appendChild(document.createTextNode(items[j]));
+          list_item.appendChild(document.createTextNode(days[i]));
           list.appendChild(list_item);
+          i++;
         }
+        // console.log(test_array);
         node.appendChild(header);
         node.appendChild(list);
       }
+
       console.log(node);
     })
     .fail(function (data) {
