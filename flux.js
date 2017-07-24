@@ -88,8 +88,6 @@ function createNode(file) {
   var jqxhr = $.get(file, function (data) { })
     .done(function (data) {
       var days = data.split(/\n/);
-      // console.log(days);
-
       let test_array = [];
       for (let i = 0; i < days.length; i++) {
         test_array.push(days[i]);
@@ -98,13 +96,12 @@ function createNode(file) {
         header.setAttribute("class", "date-header");
         var list = document.createElement("ul");
         i++;
-        while ((days[i].length > 2) && i < days.length) {
+        while (i < days.length && (days[i].length > 2)) {
           var list_item = document.createElement("li");
           list_item.appendChild(document.createTextNode(days[i]));
           list.appendChild(list_item);
           i++;
         }
-        // console.log(test_array);
         node.appendChild(header);
         node.appendChild(list);
       }
