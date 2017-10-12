@@ -86,6 +86,7 @@
 
 .button-month:hover, .bottom_button:hover {
     -webkit-transition: background-color 0.5s linear, color 0.2s linear;
+    transition: background-color 0.5s linear, color 0.2s linear;
     background: red;
     color: white;
 }
