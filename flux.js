@@ -18,12 +18,26 @@ var months = {
   "12": "December"
 };
 
+var yearMonths = {
+  "jan" : "button",
+  "feb" : "disabled",
+  "mar" : "disabled",
+  "apr" : "disabled",
+  "may" : "disabled",
+  "jun" : "disabled",
+  "jul" : "disabled",
+  "aug" : "disabled",
+  "sep" : "disabled",
+  "oct" : "disabled",
+  "nov" : "disabled",
+  "dec" : "disabled"
+}
 
 var date = new Date();
 var chosen_month;
 var possible_month;
 var current_flux = "in";
-var currentYear = date.getFullYear();
+var selectedYear = date.getFullYear();
 
 // set current month
 function setMonths() {
@@ -34,6 +48,7 @@ function setMonths() {
 }
 
 function changeMonth(n) {
+  setupMonths({});
   if (n === 1) {
     $(".month-item").text(months[possible_month]);
     chosen_month = possible_month;
@@ -43,13 +58,13 @@ function changeMonth(n) {
     if (current_flux === "in") {
       var file_string =
         "https://raw.githubusercontent.com/Davatata/netflux/master/" +
-        currentYear + "/incoming/in_" + file_month + "_" + currentYear + ".txt";
+        selectedYear + "/incoming/in_" + file_month + "_" + selectedYear + ".txt";
     } else {
       var file_string =
         "https://raw.githubusercontent.com/Davatata/netflux/master/" +
-        currentYear + "/outgoing/out_" + file_month + "_" + currentYear + ".txt";
+        selectedYear + "/outgoing/out_" + file_month + "_" + selectedYear + ".txt";
     }
-
+    
     var ele = createNode(file_string);
     console.log(file_string);
     var parent = document.getElementById("parent_node");
@@ -66,7 +81,12 @@ function changeMonth(n) {
 }
 
 function pickMonth(n) {
-  possible_month = n;
+  if (n) {
+    possible_month = n;
+  }
+  else {
+    possible_month = date.getMonth() + 1;
+  }
 }
 
 // when certian button (in or out) is clicked, toggle backgrounds
@@ -128,4 +148,40 @@ function showAbout() {
 function showFlux() {
   document.getElementById("flux_content").style.display = "block";
   document.getElementById("about_content").style.display = "none";
+}
+
+function setupMonths(option) {
+  let year = option.value;
+
+  if (!year) {
+    year = new Date().getFullYear();
+  }
+
+  let monthHtml = 
+  `<div class="row text-center">
+    <div id="" class="small-4 columns no-padding"><button id="janButton" type=${yearMonths["jan"]} class="button-month" month="1" onclick="pickMonth(this.getAttribute('month'))">Jan</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="febButton" type=${yearMonths["feb"]} class="button-month" month="2" onclick="pickMonth(this.getAttribute('month'))">Feb</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="marButton" type=${yearMonths["mar"]} class="button-month" month="3" onclick="pickMonth(this.getAttribute('month'))">Mar</button></div>
+  </div>
+  <div class="row text-center">
+    <div id="" class="small-4 columns no-padding"><button id="aprButton" type=${yearMonths["apr"]} class="button-month" month="4" onclick="pickMonth(this.getAttribute('month'))">Apr</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="mayButton" type=${yearMonths["may"]} class="button-month" month="5" onclick="pickMonth(this.getAttribute('month'))">May</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="junButton" type=${yearMonths["jun"]} class="button-month" month="6" onclick="pickMonth(this.getAttribute('month'))">Jun</button></div>
+  </div>
+  <div class="row text-center">
+    <div id="" class="small-4 columns no-padding"><button id="julButton" type=${yearMonths["jul"]} class="button-month" month="7" onclick="pickMonth(this.getAttribute('month'))">Jul</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="augButton" type=${yearMonths["aug"]} class="button-month" month="8" onclick="pickMonth(this.getAttribute('month'))">Aug</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="sepButton" type=${yearMonths["sep"]} class="button-month" month="9" onclick="pickMonth(this.getAttribute('month'))">Sep</button></div>
+  </div>
+  <div class="row text-center">
+    <div id="" class="small-4 columns no-padding"><button id="octButton" type=${yearMonths["oct"]} class="button-month" month="10" onclick="pickMonth(this.getAttribute('month'))">Oct</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="novButton" type=${yearMonths["nov"]} class="button-month" month="11" onclick="pickMonth(this.getAttribute('month'))">Nov</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="decButton" type=${yearMonths["dec"]} class="button-month" month="12" onclick="pickMonth(this.getAttribute('month'))">Dec</button></div>
+  </div>
+  <hr/>
+  <div class="button-group float-right">
+    <a class="button rounded secondary round-button" href="#" style="margin-right: 1em" onclick="changeMonth(0)">Cancel</a>
+    <a class="button rounded success round-button" href="#" onclick="changeMonth(1)">Update</a>
+  </div>`;
+  document.getElementById("month_wrapper").innerHTML = monthHtml;
 }

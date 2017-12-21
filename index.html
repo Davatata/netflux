@@ -97,28 +97,32 @@
     <div class="tiny reveal" id="month_modal" data-reveal>
       <h4 class="text-center">Select Month:</h4>
       <hr/>
+      <!-- <label>Select Year
+        <select id="selectedYear" onchange="setupMonths(this)">
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+        </select>
+      </label> -->
       <div id="month_wrapper">
         <div class="row text-center">
-          <div id="" class="small-4 columns no-padding">
-            <button id="" type="button" class="button-month" month="1" onclick="pickMonth(this.getAttribute('month'))">Jan</button>
-          </div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="2" onclick="pickMonth(this.getAttribute('month'))">Feb</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="3" onclick="pickMonth(this.getAttribute('month'))">Mar</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="janButton" type="button" class="button-month" month="1" onclick="pickMonth(this.getAttribute('month'))">Jan</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="febButton" type="button" class="button-month" month="2" onclick="pickMonth(this.getAttribute('month'))">Feb</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="marButton" type="button" class="button-month" month="3" onclick="pickMonth(this.getAttribute('month'))">Mar</button></div>
         </div>
         <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="4" onclick="pickMonth(this.getAttribute('month'))">Apr</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="5" onclick="pickMonth(this.getAttribute('month'))">May</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="6" onclick="pickMonth(this.getAttribute('month'))">Jun</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="aprButton" type="button" class="button-month" month="4" onclick="pickMonth(this.getAttribute('month'))">Apr</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="mayButton" type="button" class="button-month" month="5" onclick="pickMonth(this.getAttribute('month'))">May</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="junButton" type="button" class="button-month" month="6" onclick="pickMonth(this.getAttribute('month'))">Jun</button></div>
         </div>
         <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="7" onclick="pickMonth(this.getAttribute('month'))">Jul</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="8" onclick="pickMonth(this.getAttribute('month'))">Aug</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="9" onclick="pickMonth(this.getAttribute('month'))">Sep</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="julButton" type="button" class="button-month" month="7" onclick="pickMonth(this.getAttribute('month'))">Jul</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="augButton" type="button" class="button-month" month="8" onclick="pickMonth(this.getAttribute('month'))">Aug</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="sepButton" type="button" class="button-month" month="9" onclick="pickMonth(this.getAttribute('month'))">Sep</button></div>
         </div>
         <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="10" onclick="pickMonth(this.getAttribute('month'))">Oct</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="11" onclick="pickMonth(this.getAttribute('month'))">Nov</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="" type="button" class="button-month" month="12" onclick="pickMonth(this.getAttribute('month'))">Dec</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="octButton" type="button" class="button-month" month="10" onclick="pickMonth(this.getAttribute('month'))">Oct</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="novButton" type="button" class="button-month" month="11" onclick="pickMonth(this.getAttribute('month'))">Nov</button></div>
+          <div id="" class="small-4 columns no-padding"><button id="decButton" type="button" class="button-month" month="12" onclick="pickMonth(this.getAttribute('month'))">Dec</button></div>
         </div>
         <hr/>
         <div class="button-group float-right">
