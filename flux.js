@@ -18,13 +18,16 @@ var months = {
   "12": "December"
 };
 
+
+var date = new Date();
 var chosen_month;
 var possible_month;
 var current_flux = "in";
+var currentYear = date.getFullYear();
 
 // set current month
 function setMonths() {
-  chosen_month = new Date().getMonth() + 1;
+  chosen_month = date.getMonth() + 1;
   possible_month = chosen_month;
   $(".month-item").text(months[chosen_month]);
   changeMonth(1);
@@ -40,15 +43,15 @@ function changeMonth(n) {
     if (current_flux === "in") {
       var file_string =
         "https://raw.githubusercontent.com/Davatata/netflux/master/" +
-        "incoming/in_" + file_month + "_2017.txt";
+        currentYear + "/incoming/in_" + file_month + "_" + currentYear + ".txt";
     } else {
       var file_string =
         "https://raw.githubusercontent.com/Davatata/netflux/master/" +
-        "outgoing/out_" + file_month + "_2017.txt";
+        currentYear + "/outgoing/out_" + file_month + "_" + currentYear + ".txt";
     }
 
     var ele = createNode(file_string);
-    console.log(ele);
+    console.log(file_string);
     var parent = document.getElementById("parent_node");
     var content = document.getElementById("flux_content");
     ele.id = "flux_content";
