@@ -19,18 +19,18 @@ var months = {
 };
 
 var yearMonths = {
-  "jan" : "button",
-  "feb" : "disabled",
-  "mar" : "disabled",
-  "apr" : "disabled",
-  "may" : "disabled",
-  "jun" : "disabled",
-  "jul" : "disabled",
-  "aug" : "disabled",
-  "sep" : "disabled",
-  "oct" : "disabled",
-  "nov" : "disabled",
-  "dec" : "disabled"
+  "jan" : "button-month",
+  "feb" : "button-disabled",
+  "mar" : "button-disabled",
+  "apr" : "button-disabled",
+  "may" : "button-disabled",
+  "jun" : "button-disabled",
+  "jul" : "button-disabled",
+  "aug" : "button-disabled",
+  "sep" : "button-disabled",
+  "oct" : "button-disabled",
+  "nov" : "button-disabled",
+  "dec" : "button-disabled"
 }
 
 var date = new Date();
@@ -45,11 +45,17 @@ function setMonths() {
   possible_month = chosen_month;
   $(".month-item").text(months[chosen_month]);
   changeMonth(1);
+  setupMonths({});
 }
 
 function changeMonth(n) {
-  setupMonths({});
+  
   if (n === 1) {
+    // remove below if statement after date: jan 1, 2018
+    if (possible_month === '1') {
+      selectedYear = 2018;
+    }
+    
     $(".month-item").text(months[possible_month]);
     chosen_month = possible_month;
     var file_month = months[chosen_month].toLowerCase().substring(0, 3);
@@ -80,12 +86,12 @@ function changeMonth(n) {
   $('button.close-button').trigger('click');
 }
 
-function pickMonth(n) {
-  if (n) {
-    possible_month = n;
-  }
-  else {
+function pickMonth(n, classMonth) {
+  if (classMonth === 'button-disabled') {
     possible_month = date.getMonth() + 1;
+  }
+  else if (n) {
+    possible_month = n;
   }
 }
 
@@ -159,24 +165,24 @@ function setupMonths(option) {
 
   let monthHtml = 
   `<div class="row text-center">
-    <div id="" class="small-4 columns no-padding"><button id="janButton" type=${yearMonths["jan"]} class="button-month" month="1" onclick="pickMonth(this.getAttribute('month'))">Jan</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="febButton" type=${yearMonths["feb"]} class="button-month" month="2" onclick="pickMonth(this.getAttribute('month'))">Feb</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="marButton" type=${yearMonths["mar"]} class="button-month" month="3" onclick="pickMonth(this.getAttribute('month'))">Mar</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="janButton" class=${yearMonths["jan"]} type="button" month="1" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Jan</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="febButton" class=${yearMonths["feb"]} type="button" month="2" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Feb</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="marButton" class=${yearMonths["mar"]} type="button" month="3" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Mar</button></div>
   </div>
   <div class="row text-center">
-    <div id="" class="small-4 columns no-padding"><button id="aprButton" type=${yearMonths["apr"]} class="button-month" month="4" onclick="pickMonth(this.getAttribute('month'))">Apr</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="mayButton" type=${yearMonths["may"]} class="button-month" month="5" onclick="pickMonth(this.getAttribute('month'))">May</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="junButton" type=${yearMonths["jun"]} class="button-month" month="6" onclick="pickMonth(this.getAttribute('month'))">Jun</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="aprButton" class=${yearMonths["apr"]} type="button" month="4" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Apr</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="mayButton" class=${yearMonths["may"]} type="button" month="5" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">May</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="junButton" class=${yearMonths["jun"]} type="button" month="6" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Jun</button></div>
   </div>
   <div class="row text-center">
-    <div id="" class="small-4 columns no-padding"><button id="julButton" type=${yearMonths["jul"]} class="button-month" month="7" onclick="pickMonth(this.getAttribute('month'))">Jul</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="augButton" type=${yearMonths["aug"]} class="button-month" month="8" onclick="pickMonth(this.getAttribute('month'))">Aug</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="sepButton" type=${yearMonths["sep"]} class="button-month" month="9" onclick="pickMonth(this.getAttribute('month'))">Sep</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="julButton" class=${yearMonths["jul"]} type="button" month="7" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Jul</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="augButton" class=${yearMonths["aug"]} type="button" month="8" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Aug</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="sepButton" class=${yearMonths["sep"]} type="button" month="9" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Sep</button></div>
   </div>
   <div class="row text-center">
-    <div id="" class="small-4 columns no-padding"><button id="octButton" type=${yearMonths["oct"]} class="button-month" month="10" onclick="pickMonth(this.getAttribute('month'))">Oct</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="novButton" type=${yearMonths["nov"]} class="button-month" month="11" onclick="pickMonth(this.getAttribute('month'))">Nov</button></div>
-    <div id="" class="small-4 columns no-padding"><button id="decButton" type=${yearMonths["dec"]} class="button-month" month="12" onclick="pickMonth(this.getAttribute('month'))">Dec</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="octButton" class=${yearMonths["oct"]} type="button" month="10" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Oct</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="novButton" class=${yearMonths["nov"]} type="button" month="11" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Nov</button></div>
+    <div id="" class="small-4 columns no-padding"><button id="decButton" class=${yearMonths["dec"]} type="button" month="12" onclick="pickMonth(this.getAttribute('month'), this.getAttribute('class'))">Dec</button></div>
   </div>
   <hr/>
   <div class="button-group float-right">
