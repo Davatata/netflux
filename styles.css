@@ -131,3 +131,7 @@
 .off-canvas-wrapper {
     background-color: lightgray;
 }
+
+.button-month, .button-disabled {
+  outline: none;
+}
