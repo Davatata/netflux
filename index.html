@@ -15,7 +15,7 @@
   <script>
     $(document).ready(function () {
       $('body').css("display", "block");
-      console.log("ready");
+      console.log("Netflux ready.");
       setMonths();
       $('#bottom_in').click();
       showFlux();
@@ -103,32 +103,9 @@
           <option value="2018">2018</option>
         </select>
       </label> -->
+
+      <!-- This will contain all the month data -->
       <div id="month_wrapper">
-        <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="janButton" type="button" class="button-month" month="1" onclick="pickMonth(this.getAttribute('month'))">Jan</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="febButton" type="button" class="button-month" month="2" onclick="pickMonth(this.getAttribute('month'))">Feb</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="marButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Mar</button></div>
-        </div>
-        <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="aprButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Apr</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="mayButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">May</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="junButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Jun</button></div>
-        </div>
-        <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="julButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Jul</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="augButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Aug</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="sepButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Sep</button></div>
-        </div>
-        <div class="row text-center">
-          <div id="" class="small-4 columns no-padding"><button id="octButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Oct</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="novButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Nov</button></div>
-          <div id="" class="small-4 columns no-padding"><button id="decButton" type="button" class="button-disabled" month="0" onclick="pickMonth(this.getAttribute('month'))">Dec</button></div>
-        </div>
-        <hr/>
-        <div class="button-group float-right">
-          <a class="button rounded secondary round-button" href="#" style="margin-right: 1em" onclick="changeMonth(0)">Cancel</a>
-          <a class="button rounded success round-button" href="#" onclick="changeMonth(1)">Update</a>
-        </div>
       </div>
 
       <button class="close-button" data-close aria-label="Close modal" type="button">

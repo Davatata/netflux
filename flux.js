@@ -1,7 +1,7 @@
 // Load in the in/out files and adjust lines accordingly.
-// Change ( class="button-disabled" month="0" ) to 
-//  ( class="button-month" month="8") : here 8 represents August
-//  so change according to month (1-12)
+// Change the value in yearMonths object:
+// "feb" : "button-disabled" -> "button-month"
+
 
 var months = {
   "1": "January",
@@ -20,7 +20,7 @@ var months = {
 
 var yearMonths = {
   "jan" : "button-month",
-  "feb" : "button-disabled",
+  "feb" : "button-month",
   "mar" : "button-disabled",
   "apr" : "button-disabled",
   "may" : "button-disabled",
@@ -34,8 +34,8 @@ var yearMonths = {
 }
 
 var date = new Date();
-var chosen_month;
-var possible_month;
+var chosen_month = 1;
+var possible_month = 1;
 var current_flux = "in";
 var selectedYear = date.getFullYear();
 
@@ -48,18 +48,12 @@ function setMonths() {
   setupMonths({});
 }
 
-function changeMonth(n) {
-  
+function changeMonth(n) {  
   if (n === 1) {
-    // remove below if statement after date: jan 1, 2018
-    if (possible_month === '1') {
-      selectedYear = 2018;
-    }
-    
     $(".month-item").text(months[possible_month]);
     chosen_month = possible_month;
     var file_month = months[chosen_month].toLowerCase().substring(0, 3);
-    console.log(file_month);
+    // console.log(file_month);
 
     if (current_flux === "in") {
       var file_string =
@@ -72,7 +66,7 @@ function changeMonth(n) {
     }
     
     var ele = createNode(file_string);
-    console.log(file_string);
+    // console.log(file_string);
     var parent = document.getElementById("parent_node");
     var content = document.getElementById("flux_content");
     ele.id = "flux_content";
@@ -111,7 +105,7 @@ function flux_click(id) {
 }
 
 function createNode(file) {
-  console.log(file);
+  // console.log(file);
   var node = document.createElement("div");
 
   var jqxhr = $.get(file, function (data) { })
@@ -135,7 +129,7 @@ function createNode(file) {
         node.appendChild(list);
       }
 
-      console.log(node);
+      // console.log(node);
     })
     .fail(function (data) {
       var bad = document.createElement("h4");
@@ -156,9 +150,7 @@ function showFlux() {
   document.getElementById("about_content").style.display = "none";
 }
 
-function setupMonths(option) {
-  let year = option.value;
-
+function setupMonths(year) {
   if (!year) {
     year = new Date().getFullYear();
   }
