@@ -2,7 +2,6 @@
 // Change the value in yearMonths object:
 // "feb" : "button-disabled" -> "button-month"
 
-
 var months = {
   "1": "January",
   "2": "February",
@@ -23,7 +22,7 @@ var yearMonths = {
   "feb" : "button-month",
   "mar" : "button-month",
   "apr" : "button-month",
-  "may" : "button-disabled",
+  "may" : "button-month",
   "jun" : "button-disabled",
   "jul" : "button-disabled",
   "aug" : "button-disabled",
@@ -31,7 +30,7 @@ var yearMonths = {
   "oct" : "button-disabled",
   "nov" : "button-disabled",
   "dec" : "button-disabled"
-}
+};
 
 var date = new Date();
 var chosen_month = 1;
