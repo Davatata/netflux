@@ -28,7 +28,7 @@ var yearMonths = {
   "aug" : "button-month",
   "sep" : "button-month",
   "oct" : "button-month",
-  "nov" : "button-disabled",
+  "nov" : "button-month",
   "dec" : "button-disabled"
 };
 
