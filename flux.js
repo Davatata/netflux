@@ -29,7 +29,7 @@ var yearMonths = {
   "sep" : "button-month",
   "oct" : "button-month",
   "nov" : "button-month",
-  "dec" : "button-disabled"
+  "dec" : "button-month"
 };
 
 var date = new Date();
