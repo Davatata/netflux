@@ -1,6 +1,7 @@
 // Load in the in/out files and adjust lines accordingly.
 // Change the value in yearMonths object:
 // "feb" : "button-disabled" -> "button-month"
+// use \n$0 in replace field
 
 var months = {
   "1": "January",
@@ -20,16 +21,16 @@ var months = {
 var yearMonths = {
   "jan" : "button-month",
   "feb" : "button-month",
-  "mar" : "button-month",
-  "apr" : "button-month",
-  "may" : "button-month",
-  "jun" : "button-month",
-  "jul" : "button-month",
-  "aug" : "button-month",
-  "sep" : "button-month",
-  "oct" : "button-month",
-  "nov" : "button-month",
-  "dec" : "button-month"
+  "mar" : "button-disabled",
+  "apr" : "button-disabled",
+  "may" : "button-disabled",
+  "jun" : "button-disabled",
+  "jul" : "button-disabled",
+  "aug" : "button-disabled",
+  "sep" : "button-disabled",
+  "oct" : "button-disabled",
+  "nov" : "button-disabled",
+  "dec" : "button-disabled"
 };
 
 var date = new Date();
